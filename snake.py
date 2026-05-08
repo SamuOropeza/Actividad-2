@@ -48,6 +48,13 @@ def move():
     else:
         snake.pop(0)
 
+    opciones = [vector(10, 0), vector(-10, 0), vector(0, 10), vector(0, -10)]
+    paso = choice(opciones)
+    nueva_comida = food + paso
+
+    if inside(nueva_comida):
+        food.move(paso)
+
     clear()
 
     for body in snake:
